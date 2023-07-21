@@ -1,19 +1,17 @@
 <?php 
 
-require_once("../DB-ACCESS/DB_ACCES.php");
+require_once("./Clases/DAO.php");
 
-class GetData{
+class GetData{  
 
+    public $data;
     public function __construct(){
 
     }
-    function GetData(){
-        
-
+    function GetDatas(){
+        $dao = new DAO();
+        $res = $dao->GetData();
+        return json_encode($res);
     }
-
-
 }
-
-
 ?>
